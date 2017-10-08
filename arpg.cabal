@@ -1,0 +1,50 @@
+name:           arpg
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/githubuser/arpg#readme
+bug-reports:    https://github.com/githubuser/arpg/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2017 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/arpg
+
+library
+  hs-source-dirs:
+    src
+  build-depends:
+    base >=4.7 && <5,
+    apecs,
+    lens,
+    sdl2
+  exposed-modules:
+    Lib
+    ARPG.World
+  other-modules:
+    Paths_arpg
+  ghc-options: -Wall
+  default-language: Haskell2010
+  default-extensions:
+    GeneralizedNewtypeDeriving,
+    MultiParamTypeClasses,
+    OverloadedStrings,
+    TemplateHaskell,
+    TypeFamilies
+
+executable arpg
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  build-depends:
+    base,
+    arpg
+  default-language: Haskell2010
