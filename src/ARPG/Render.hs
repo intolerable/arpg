@@ -26,6 +26,7 @@ triangleToRender = Vector.fromList
 setupRender :: System World ()
 setupRender =
   liftIO $ do
+    polygonMode $= (Line, Line)
     blend $= Enabled
     multisample $= Enabled
     debugOutput $= Enabled
